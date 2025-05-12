@@ -1,0 +1,262 @@
+/* --- Importación de Fuentes --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --monospace-font: 'Roboto Mono', monospace;
+    --background-color: #ffffff; /* Fondo principal blanco como en la imagen */
+    --text-color: #212121; /* Texto principal oscuro */
+    --sidebar-bg: #f8f9fa; 
+    --button-bg: #1a1a1a; /* Fondo de botón oscuro como en la imagen */
+    --button-text-color: #ffffff;
+    --border-color: #e0e0e0; /* Color de borde sutil */
+    --link-color: #007bff;
+    --container-max-width: 1200px;
+    --base-spacing: 1rem; 
+}
+
+/* --- Estilos Globales y Reseteo Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 100%; 
+    padding: calc(var(--base-spacing) * 1.5); /* 24px de padding alrededor */
+}
+
+/* --- Contenedor Principal del Portfolio --- */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+    max-width: var(--container-max-width);
+    margin: 0 auto; /* Centrar el contenedor */
+    background-color: #fff; /* Fondo blanco para el contenido */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Para que el borde redondeado afecte a los child */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    background-color: var(--sidebar-bg); /* Color de fondo ligeramente diferente */
+    padding: calc(var(--base-spacing) * 2,1);
+    flex: 1 1 30%; /* Crece, Encoge, Base (aprox 30% del ancho) */
+    min-width: 280px; /* Ancho mínimo para que no se comprima demasiado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+}
+
+.profile-picture {
+    width: 150px; /* Ancho fijo para la imagen de perfil */
+    height: 150px; /* Alto fijo para mantener proporción circular */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    margin-bottom: var(--base-spacing);
+    border: 3px solid var(--button-bg); /* Borde que coincida con los botones */
+}
+
+.sidebar h1 {
+    font-family: var(--monospace-font); /* Fuente monoespaciada para el nombre */
+    font-size: calc(var(--base-spacing) * 1.5); /* 24px */
+    margin-bottom: calc(var(--base-spacing) * 0.25); /* 4px */
+    color: var(--text-color);
+}
+
+.sidebar .job-title {
+    font-size: calc(var(--base-spacing) * 1); /* 16px */
+    color: #555;
+    margin-bottom: calc(var(--base-spacing) * 1.5); /* 24px */
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 1.5); /* 12px 24px */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #333; /* Un poco más claro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.email-button {
+    width: 80%; /* Ancho relativo al contenedor padre (sidebar) */
+    margin-bottom: calc(var(--base-spacing) * 1.5); /* 24px */
+}
+
+.social-links {
+    margin-top: var(--base-spacing);
+}
+
+.social-icon {
+    width: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
+    height: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
+    fill: var(--icon-color); /* Color de relleno para SVGs monocromáticos */
+    transition: fill 0.3s ease, transform 0.2s ease;
+    vertical-align: middle; /* Mejor alineación vertical */
+}
+
+.social-links a {
+    font-family: var(--monospace-font);
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 calc(var(--base-spacing) * 0.5); /* 8px */
+    font-size: calc(var(--base-spacing) * 1.25); /* 20px */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover .social-icon {
+    fill: var(--icon-hover-color); /* Cambia el color del SVG al pasar el mouse sobre el enlace */
+    transform: translateY(-2px); /* Efecto de elevación como los otros botones */
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+    padding: calc(var(--base-spacing) * 2.5); /* 40px */
+    flex: 1 1 70%; /* Ocupa el espacio restante, aprox 70% */
+}
+
+.main-content h2 {
+    font-family: var(--monospace-font);
+    font-size: calc(var(--base-spacing) * 1.75); /* 28px */
+    margin-bottom: var(--base-spacing);
+    padding-bottom: calc(var(--base-spacing) * 0.5); /* 8px */
+    border-bottom: 2px solid var(--button-bg); /* Línea inferior como en la imagen */
+    display: inline-block; /* Para que el borde solo ocupe el ancho del texto */
+}
+
+.main-content p {
+    margin-bottom: calc(var(--base-spacing) * 1.25); /* 20px */
+    font-size: calc(var(--base-spacing) * 1); /* 16px */
+}
+
+.action-buttons {
+    margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
+    display: flex;
+    gap: var(--base-spacing); /* Espacio entre botones */
+}
+
+/* --- Estilos de la Tabla --- */
+.knowledge-section {
+    margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
+}
+
+table {
+    width: 100%; /* La tabla ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    margin-top: var(--base-spacing);
+    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+}
+
+th, td {
+    border: 1px solid var(--border-color); /* Bordes para celdas */
+    padding: calc(var(--base-spacing) * 0.75); /* 12px */
+    text-align: left;
+}
+
+thead th {
+    background-color: #efefef; /* Fondo gris claro para encabezados de tabla */
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* --- Estilos del Formulario --- */
+.contact-section {
+    margin-bottom: var(--base-spacing) * 1; /* 16px */
+}
+.form-group {
+    margin-bottom: var(--base-spacing); /* 16px */
+}
+
+.form-group label {
+    display: block; /* Las etiquetas ocupan su propia línea */
+    margin-bottom: calc(var(--base-spacing) * 0.25); /* 4px */
+    font-weight: bold;
+    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%; /* Campos de entrada ocupan todo el ancho */
+    padding: calc(var(--base-spacing) * 0.6); /* 9.6px */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--primary-font);
+    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+}
+
+.form-group textarea {
+    resize: vertical; 
+    min-height: 80px; /* Altura mínima */
+}
+
+.submit-button {
+    width: auto; 
+    padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 2); /* 12px 32px */
+}
+
+/* --- Pie de Página --- */
+footer {
+    text-align: center;
+    padding: var(--base-spacing);
+    margin-top: calc(var(--base-spacing) * 2); /* 32px */
+    font-size: calc(var(--base-spacing) * 0.875); /* 14px */
+    color: #777;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column; /* Columnas se apilan en pantallas pequeñas */
+    }
+
+    .sidebar {
+        border-right: none; /* Quitar borde derecho en vista de columna */
+        border-bottom: 1px solid var(--border-color); /* Añadir borde inferior */
+        min-width: auto; /* Permitir que se encoja más */
+    }
+
+    .main-content {
+        padding: calc(var(--base-spacing) * 1.5); /* 24px */
+    }
+
+    .sidebar h1 {
+        font-size: calc(var(--base-spacing) * 1.25); /* 20px */
+    }
+    .main-content h2 {
+        font-size: calc(var(--base-spacing) * 1.5); /* 24px */
+    }
+    .action-buttons {
+        flex-direction: column; /* Botones de acción en columna */
+        align-items: flex-start;
+    }
+    .action-buttons .button {
+        width: 100%; /* Botones ocupan todo el ancho */
+        text-align: center;
+        margin-bottom: calc(var(--base-spacing) * 0.5);
+    }
+}
