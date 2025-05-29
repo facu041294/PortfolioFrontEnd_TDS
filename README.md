@@ -3,6 +3,8 @@
 ¡Bienvenido a mi primer proyecto de portfolio web! 
 Esta página fue creada como parte de mi aprendizaje y para mostrar un poco sobre mí y mis intereses profesionales.
 
+![Vista Previa del Portfolio](assets/img/screenshot-portfolio.jpg)
+
 ## Sobre este Proyecto
 
 Este repositorio contiene el código fuente de mi página de portfolio personal. Es un proyecto sencillo realizado con:

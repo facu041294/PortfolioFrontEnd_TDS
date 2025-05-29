@@ -94,6 +94,12 @@ body {
 .button:hover {
     background-color: #333; /* Un poco más claro al pasar el mouse */
     transform: translateY(-2px); /* Pequeño efecto de elevación */
+    opacity: 0.8
+}
+
+.button:active {
+    background-color: #6b6b6b;
+    transform: scale(0.9);
 }
 
 .email-button {
@@ -106,8 +112,8 @@ body {
 }
 
 .social-icon {
-    width: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
-    height: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
+    width: calc(var(--base-spacing) * 1.5); 
+    height: calc(var(--base-spacing) * 1.5); 
     fill: var(--icon-color); /* Color de relleno para SVGs monocromáticos */
     transition: fill 0.3s ease, transform 0.2s ease;
     vertical-align: middle; /* Mejor alineación vertical */
