@@ -43,7 +43,7 @@ Puedes ver una demostración en vivo del portfolio desplegada en GitHub Pages aq
 
 ## 📂 Estructura del Proyecto
 
-`PortfolioFrontEnd_TDS/
+PortfolioFrontEnd_TDS/
 ├── assets/
 │ ├── docs/
 │ │ └── CV_Facundo_Villarreal.pdf (Ejemplo de CV)
@@ -55,7 +55,7 @@ Puedes ver una demostración en vivo del portfolio desplegada en GitHub Pages aq
 ├── css/
 │ └── style.css
 ├── index.html
-└── README.md`
+└── README.md
 
 ## 📝 Mejoras y Cumplimiento de Consignas
 
