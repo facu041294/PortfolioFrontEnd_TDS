@@ -191,83 +191,82 @@ body {
 }
 
 /*------------------------------------*\
-  #SECCION-HABILIDADES (QUE HAGO)
+  #SECCION-HABILIDADES-TECNICAS
 \*------------------------------------*/
-#que-hago {
-    margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
+.skills-section { /* Clase usada para la sección #habilidades-tecnicas */
+    margin-bottom: calc(var(--base-spacing) * 2);
 }
+
+.skills-section h3 { /* Estilo para los subtítulos de categorías de habilidades (Front-End, Back-End, etc.) */
+    font-family: var(--monospace-font);
+    font-size: calc(var(--base-spacing) * 1.25); /* Un poco más pequeño que h2 */
+    color: var(--text-color);
+    margin-top: calc(var(--base-spacing) * 1.5); /* Espacio arriba del subtítulo */
+    margin-bottom: var(--base-spacing);      /* Espacio debajo del subtítulo, antes de las cards */
+    border-bottom: 1px dashed var(--border-color); /* Un borde sutil para separar */
+    padding-bottom: calc(var(--base-spacing) * 0.25);
+}
+.skills-section h3:first-of-type { /* Para el primer h3 de la sección, quitar margen superior extra */
+    margin-top: 0;
+}
+
 
 .habilidades-container {
     display: flex;
-    flex-wrap: wrap; /* Para que las tarjetas se ajusten */
-    gap: var(--base-spacing); /* Espacio entre tarjetas */
-    margin-top: var(--base-spacing);
+    flex-wrap: wrap;
+    gap: var(--base-spacing);
+    /* margin-top: var(--base-spacing); Ya no es necesario aquí, el h3 lo maneja */
 }
 
 .habilidad-card {
-    background-color: var(--sidebar-bg); /* Un fondo sutil */
+    background-color: var(--sidebar-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-base);
     padding: var(--base-spacing);
-    flex: 1 1 calc(50% - var(--base-spacing)); /* Dos tarjetas por fila, ajustando por el gap */
-    min-width: 250px; /* Ancho mínimo para cada tarjeta */
+    flex: 1 1 calc(50% - var(--base-spacing)); /* Intenta 2 columnas por defecto */
+    min-width: 250px; /* Ancho mínimo antes de que se rompa a una columna si el espacio es muy poco */
     text-align: center;
+    display: flex; /* Para mejor control interno */
+    flex-direction: column;
+    justify-content: space-between; /* Para que el contenido se distribuya si las alturas varían */
 }
 
 .habilidad-card img {
-    max-width: 50px; /* Tamaño del icono */
-    margin-bottom: calc(var(--base-spacing) * 0.5);
-    /* Si tus iconos son SVG y quieres controlar su color con CSS: */
-    /* fill: var(--text-color); */
+    max-width: 45px; /* Ligeramente más pequeño para más espacio */
+    height: 45px; /* Para asegurar que los SVG se vean bien */
+    object-fit: contain; /* Para que los iconos no se corten */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(var(--base-spacing) * 0.75); /* Un poco más de espacio */
 }
 
-.habilidad-card h3 {
+.habilidad-card h3 { /* Este es el h3 DENTRO de la card */
     font-family: var(--monospace-font);
-    font-size: calc(var(--base-spacing) * 1.1); /* 17.6px */
+    font-size: calc(var(--base-spacing) * 1.1);
     margin-bottom: calc(var(--base-spacing) * 0.5);
     color: var(--text-color);
+    border-bottom: none; /* Asegurar que no herede el borde de los h3 de sección */
+    padding-bottom: 0;
+    margin-top: 0; /* Resetear margen superior por si acaso */
 }
 
 .habilidad-card p {
-    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+    font-size: calc(var(--base-spacing) * 0.85); /* Un poco más pequeño para más texto */
     color: #555;
-    margin-bottom: 0; /* Quitar margen inferior si es el último elemento */
+    margin-bottom: 0;
+    flex-grow: 1; /* Permite que el párrafo ocupe espacio si es necesario */
 }
 
 /*------------------------------------*\
-  #SECCION-CONOCIMIENTOS (TABLA)
+  #SECCION-ADICIONAL (Idiomas, Intereses)
 \*------------------------------------*/
-.knowledge-section {
-    margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
+.additional-info-section { /* Clase usada para la sección #adicional */
+    margin-bottom: calc(var(--base-spacing) * 2);
 }
 
-table {
-    width: 100%; /* La tabla ocupa todo el ancho disponible */
-    border-collapse: collapse; /* Une los bordes de las celdas */
-    margin-top: var(--base-spacing);
-    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
-}
-
-th, td {
-    border: 1px solid var(--border-color); /* Bordes para celdas */
-    padding: calc(var(--base-spacing) * 0.75); /* 12px */
-    text-align: left;
-    vertical-align: top; /* Mejora alineación si es que el contenido varía en altura */
-}
-
-thead th {
-    background-color: #efefef; /* Fondo gris claro para encabezados de tabla */
-    color: var(--text-color);
-    font-weight: bold;
+.additional-info-section p strong { /* Para destacar los títulos "Idiomas:", "Intereses:" */
     font-family: var(--monospace-font);
-}
-
-tbody tr:nth-child(odd) {
-    background-color: var(--sidebar-bg);
-}
-
-tbody tr:hover {
-    background-color: #e9e9e9;
+    color: var(--text-color);
 }
 
 /*------------------------------------*\
