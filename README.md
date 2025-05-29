@@ -43,19 +43,21 @@ Puedes ver una demostración en vivo del portfolio desplegada en GitHub Pages aq
 
 ## 📂 Estructura del Proyecto
 
-PortfolioFrontEnd_TDS/
-├── assets/
-│ ├── docs/
-│ │ └── CV_Facundo_Villarreal.pdf (Ejemplo de CV)
-│ └── img/
-│ ├── profileImg.jpg
-│ ├── html-svgrepo-com.svg
-│ ├── css-svgrepo-com.svg
-│ └── ... (otros iconos e imágenes)
-├── css/
-│ └── style.css
-├── index.html
-└── README.md
+*   PortfolioFrontEnd_TDS/
+*   ├── assets/
+*   │ ├── docs/
+*   │ │ └── CV_Facundo_Villarreal.pdf (Ejemplo de CV)
+*   │ └── img/
+*   │ │ └── profileImg.jpg
+*   │ │ └── html-svgrepo-com.svg
+*   │ │ └── css-svgrepo-com.svg
+*   │ │ └── ... (otros iconos e imágenes)
+*   │ └── docs/
+*   │ │ └── CV.pdf
+*   ├── css/
+*   │ └── style.css
+*   ├── index.html
+*   └── README.md
 
 ## 📝 Mejoras y Cumplimiento de Consignas
 
