@@ -46,14 +46,12 @@ Puedes ver una demostración en vivo del portfolio desplegada en GitHub Pages aq
 *   PortfolioFrontEnd_TDS/
 *   ├── assets/
 *   │ ├── docs/
-*   │ │ └── CV_Facundo_Villarreal.pdf (Ejemplo de CV)
+*   │ │ └── CV_Facundo_Villarreal.pdf
 *   │ └── img/
 *   │ │ └── profileImg.jpg
 *   │ │ └── html-svgrepo-com.svg
 *   │ │ └── css-svgrepo-com.svg
 *   │ │ └── ... (otros iconos e imágenes)
-*   │ └── docs/
-*   │ │ └── CV.pdf
 *   ├── css/
 *   │ └── style.css
 *   ├── index.html
