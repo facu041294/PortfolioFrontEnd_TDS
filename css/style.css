@@ -1,9 +1,15 @@
 /* --- Importación de Fuentes --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
 
+/*------------------------------------*\
+  #VARIABLES-CSS (CUSTOM PROPERTIES)
+\*------------------------------------*/
 :root {
+    /* Tipografia */
     --primary-font: 'Inter', sans-serif;
     --monospace-font: 'Roboto Mono', monospace;
+
+    /* Colores Principales */
     --background-color: #ffffff; /* Fondo principal blanco como en la imagen */
     --text-color: #212121; /* Texto principal oscuro */
     --sidebar-bg: #f8f9fa; 
@@ -11,27 +17,41 @@
     --button-text-color: #ffffff;
     --border-color: #e0e0e0; /* Color de borde sutil */
     --link-color: #007bff;
+    --icon-color: #333333;
+    --icon-hover-color: #007bff;
+
+    /* Layout y Espaciado */
     --container-max-width: 1200px;
     --base-spacing: 1rem; 
+    --border-radius-base: 5px;
+    --border-radius-large: 8px;
 }
 
-/* --- Estilos Globales y Reseteo Básico --- */
+/*------------------------------------*\
+  #ESTILOS-GENERALES-Y-RESETEO BÁSICO
+\*------------------------------------*/
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el width/height total del elemento */
+    margin: 0; /* Resetea márgenes por defecto */
+    padding: 0; /* Resetea paddings por defecto */
+}
+
+html {
+    font-size: 100%; /* Establece la base para unidades rem*/
+    scroll-behavior: smooth; /* Desplazamiento suave para anclas internas */
 }
 
 body {
     font-family: var(--primary-font);
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
-    font-size: 100%; 
+    line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
     padding: calc(var(--base-spacing) * 1.5); /* 24px de padding alrededor */
 }
 
-/* --- Contenedor Principal del Portfolio --- */
+/*------------------------------------*\
+  #CONTENEDOR-PRINCIPAL-PORTFOLIO
+\*------------------------------------*/
 .portfolio-container {
     display: flex;
     flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
@@ -39,20 +59,22 @@ body {
     margin: 0 auto; /* Centrar el contenedor */
     background-color: #fff; /* Fondo blanco para el contenido */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: var(--border-radius-large); /* Bordes redondeados */
     overflow: hidden; /* Para que el borde redondeado afecte a los child */
 }
 
-/* --- Sidebar --- */
+/*------------------------------------*\
+  #SIDEBAR (BARRA LATERAL)
+\*------------------------------------*/
 .sidebar {
     background-color: var(--sidebar-bg); /* Color de fondo ligeramente diferente */
-    padding: calc(var(--base-spacing) * 2,1);
+    padding: calc(var(--base-spacing) * 2) var(--base-spacing); /* 32px arriba/abajo, 16px izq/der */
     flex: 1 1 30%; /* Crece, Encoge, Base (aprox 30% del ancho) */
     min-width: 280px; /* Ancho mínimo para que no se comprima demasiado */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro del sidebar */
     border-right: 1px solid var(--border-color);
 }
 
@@ -66,7 +88,7 @@ body {
 }
 
 .sidebar h1 {
-    font-family: var(--monospace-font); /* Fuente monoespaciada para el nombre */
+    font-family: var(--monospace-font);
     font-size: calc(var(--base-spacing) * 1.5); /* 24px */
     margin-bottom: calc(var(--base-spacing) * 0.25); /* 4px */
     color: var(--text-color);
@@ -78,22 +100,32 @@ body {
     margin-bottom: calc(var(--base-spacing) * 1.5); /* 24px */
 }
 
+/*------------------------------------*\
+  #BOTONES-GENERALES
+\*------------------------------------*/
 .button {
     display: inline-block;
     background-color: var(--button-bg);
     color: var(--button-text-color);
     padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 1.5); /* 12px 24px */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-base);
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    border: none;/* Quita el borde por defecto de los botones */
+    cursor: pointer; /* Indica que es cliqueable */
+    text-align: center;
 }
 
 .button:hover {
     background-color: #333; /* Un poco más claro al pasar el mouse */
     transform: translateY(-2px); /* Pequeño efecto de elevación */
+    opacity: 0.9;
+}
+
+.button:active {
+    background-color: #505050;
+    transform: translateY(0px) scale(0.98);
 }
 
 .email-button {
@@ -101,33 +133,37 @@ body {
     margin-bottom: calc(var(--base-spacing) * 1.5); /* 24px */
 }
 
+/*------------------------------------*\
+  #ENLACES-SOCIALES
+\*------------------------------------*/
 .social-links {
     margin-top: var(--base-spacing);
-}
-
-.social-icon {
-    width: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
-    height: calc(var(--base-spacing) * 1.5); /* 24px, ajusta según necesites */
-    fill: var(--icon-color); /* Color de relleno para SVGs monocromáticos */
-    transition: fill 0.3s ease, transform 0.2s ease;
-    vertical-align: middle; /* Mejor alineación vertical */
+    display: flex; /* Para alinear los iconos horizontalmente */
+    justify-content: center; /* Centra los iconos */
+    gap: calc(var(--base-spacing) * 0.75); /* Espacio entre iconos */
 }
 
 .social-links a {
-    font-family: var(--monospace-font);
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 calc(var(--base-spacing) * 0.5); /* 8px */
-    font-size: calc(var(--base-spacing) * 1.25); /* 20px */
-    transition: color 0.3s ease;
+    display: inline-block; /* Para aplicar transformaciones */
+    color: var(--icon-color); /* Color inicial del icono */
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-links a:hover .social-icon {
-    fill: var(--icon-hover-color); /* Cambia el color del SVG al pasar el mouse sobre el enlace */
+.social-icon {
+    width: calc(var(--base-spacing) * 1.5); /* 24px */
+    height: calc(var(--base-spacing) * 1.5); /* 24px */
+    fill: currentColor; /* Hereda el color del enlace 'a' padre, permite transición */
+    vertical-align: middle; /* Mejor alineación vertical */
+}
+
+.social-links a:hover {
+    color: var(--icon-hover-color); /* Cambia el color del SVG a través del 'a' */
     transform: translateY(-2px); /* Efecto de elevación como los otros botones */
 }
 
-/* --- Contenido Principal --- */
+/*------------------------------------*\
+  #CONTENIDO-PRINCIPAL
+\*------------------------------------*/
 .main-content {
     padding: calc(var(--base-spacing) * 2.5); /* 40px */
     flex: 1 1 70%; /* Ocupa el espacio restante, aprox 70% */
@@ -148,45 +184,99 @@ body {
 }
 
 .action-buttons {
+    margin-top: var(--base-spacing); /* Espacio antes de los botones de acción */
     margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
     display: flex;
     gap: var(--base-spacing); /* Espacio entre botones */
 }
 
-/* --- Estilos de la Tabla --- */
-.knowledge-section {
-    margin-bottom: calc(var(--base-spacing) * 2); /* 32px */
+/*------------------------------------*\
+  #SECCION-HABILIDADES-TECNICAS
+\*------------------------------------*/
+.skills-section { /* Clase usada para la sección #habilidades-tecnicas */
+    margin-bottom: calc(var(--base-spacing) * 2);
 }
 
-table {
-    width: 100%; /* La tabla ocupa todo el ancho disponible */
-    border-collapse: collapse; /* Une los bordes de las celdas */
-    margin-top: var(--base-spacing);
-    font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
-}
-
-th, td {
-    border: 1px solid var(--border-color); /* Bordes para celdas */
-    padding: calc(var(--base-spacing) * 0.75); /* 12px */
-    text-align: left;
-}
-
-thead th {
-    background-color: #efefef; /* Fondo gris claro para encabezados de tabla */
+.skills-section h3 { /* Estilo para los subtítulos de categorías de habilidades (Front-End, Back-End, etc.) */
+    font-family: var(--monospace-font);
+    font-size: calc(var(--base-spacing) * 1.25); /* Un poco más pequeño que h2 */
     color: var(--text-color);
-    font-weight: bold;
+    margin-top: calc(var(--base-spacing) * 1.5); /* Espacio arriba del subtítulo */
+    margin-bottom: var(--base-spacing);      /* Espacio debajo del subtítulo, antes de las cards */
+    border-bottom: 1px dashed var(--border-color); /* Un borde sutil para separar */
+    padding-bottom: calc(var(--base-spacing) * 0.25);
+}
+.skills-section h3:first-of-type { /* Para el primer h3 de la sección, quitar margen superior extra */
+    margin-top: 0;
 }
 
-tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+
+.habilidades-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--base-spacing);
+    /* margin-top: var(--base-spacing); Ya no es necesario aquí, el h3 lo maneja */
 }
 
-/* --- Estilos del Formulario --- */
+.habilidad-card {
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-base);
+    padding: var(--base-spacing);
+    flex: 1 1 calc(50% - var(--base-spacing)); /* Intenta 2 columnas por defecto */
+    min-width: 250px; /* Ancho mínimo antes de que se rompa a una columna si el espacio es muy poco */
+    text-align: center;
+    display: flex; /* Para mejor control interno */
+    flex-direction: column;
+    justify-content: space-between; /* Para que el contenido se distribuya si las alturas varían */
+}
+
+.habilidad-card img {
+    max-width: 45px; /* Ligeramente más pequeño para más espacio */
+    height: 45px; /* Para asegurar que los SVG se vean bien */
+    object-fit: contain; /* Para que los iconos no se corten */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(var(--base-spacing) * 0.75); /* Un poco más de espacio */
+}
+
+.habilidad-card h3 { /* Este es el h3 DENTRO de la card */
+    font-family: var(--monospace-font);
+    font-size: calc(var(--base-spacing) * 1.1);
+    margin-bottom: calc(var(--base-spacing) * 0.5);
+    color: var(--text-color);
+    border-bottom: none; /* Asegurar que no herede el borde de los h3 de sección */
+    padding-bottom: 0;
+    margin-top: 0; /* Resetear margen superior por si acaso */
+}
+
+.habilidad-card p {
+    font-size: calc(var(--base-spacing) * 0.85); /* Un poco más pequeño para más texto */
+    color: #555;
+    margin-bottom: 0;
+    flex-grow: 1; /* Permite que el párrafo ocupe espacio si es necesario */
+}
+
+/*------------------------------------*\
+  #SECCION-ADICIONAL (Idiomas, Intereses)
+\*------------------------------------*/
+.additional-info-section { /* Clase usada para la sección #adicional */
+    margin-bottom: calc(var(--base-spacing) * 2);
+}
+
+.additional-info-section p strong { /* Para destacar los títulos "Idiomas:", "Intereses:" */
+    font-family: var(--monospace-font);
+    color: var(--text-color);
+}
+
+/*------------------------------------*\
+  #SECCION-CONTACTO (FORMULARIO)
+\*------------------------------------*/
 .contact-section {
-    margin-bottom: var(--base-spacing) * 1; /* 16px */
+    margin-bottom: var(--base-spacing); 
 }
 .form-group {
-    margin-bottom: var(--base-spacing); /* 16px */
+    margin-bottom: var(--base-spacing);
 }
 
 .form-group label {
@@ -203,14 +293,24 @@ tbody tr:nth-child(odd) {
     width: 100%; /* Campos de entrada ocupan todo el ancho */
     padding: calc(var(--base-spacing) * 0.6); /* 9.6px */
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: var(--border-radius-base);
     font-family: var(--primary-font);
     font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    outline: none; /* Quitar el outline por defecto */
+    border-color: var(--link-color); /* Color de borde al enfocar */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Sombra sutil al enfocar */
 }
 
 .form-group textarea {
-    resize: vertical; 
-    min-height: 80px; /* Altura mínima */
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima */
 }
 
 .submit-button {
@@ -218,7 +318,9 @@ tbody tr:nth-child(odd) {
     padding: calc(var(--base-spacing) * 0.75) calc(var(--base-spacing) * 2); /* 12px 32px */
 }
 
-/* --- Pie de Página --- */
+/*------------------------------------*\
+  #PIE-DE-PAGINA (FOOTER)
+\*------------------------------------*/
 footer {
     text-align: center;
     padding: var(--base-spacing);
@@ -226,10 +328,28 @@ footer {
     font-size: calc(var(--base-spacing) * 0.875); /* 14px */
     color: #777;
     border-top: 1px solid var(--border-color);
+    width: 100%;
 }
 
-/* --- Responsividad --- */
+/*------------------------------------*\
+  #RESPONSIVIDAD (MEDIA QUERIES)
+\*------------------------------------*/
+/* Tabletas Grandes y Laptops Pequeñas (hasta 1080px) */
+@media (max-width: 1080px) {
+    .sidebar {
+        min-width: 250px; /* Reducir un poco el min-width del sidebar */
+    }
+    .habilidad-card {
+        flex-basis: calc(50% - var(--base-spacing)); /* ajustamos si se ven apretadas */
+    }
+}
+
+/* Tabletas (hasta 768px) */
 @media (max-width: 768px) {
+    body {
+        padding: var(--base-spacing); /* Reducir padding general del body */
+    }
+
     .portfolio-container {
         flex-direction: column; /* Columnas se apilan en pantallas pequeñas */
     }
@@ -238,25 +358,113 @@ footer {
         border-right: none; /* Quitar borde derecho en vista de columna */
         border-bottom: 1px solid var(--border-color); /* Añadir borde inferior */
         min-width: auto; /* Permitir que se encoja más */
+        flex-basis: auto; /* Resetea la base de flexión */
+        width: 100%;
+        padding: calc(var(--base-spacing) * 1.5);
     }
 
     .main-content {
         padding: calc(var(--base-spacing) * 1.5); /* 24px */
+        width: 100%;
     }
 
     .sidebar h1 {
-        font-size: calc(var(--base-spacing) * 1.25); /* 20px */
+        font-size: calc(var(--base-spacing) * 1.35); /* 21.6px */
     }
     .main-content h2 {
-        font-size: calc(var(--base-spacing) * 1.5); /* 24px */
+        font-size: calc(var(--base-spacing) * 1.6); /* 25.6px */
     }
     .action-buttons {
         flex-direction: column; /* Botones de acción en columna */
-        align-items: flex-start;
+        align-items: stretch; /* Estira los botones al ancho completo */
     }
     .action-buttons .button {
         width: 100%; /* Botones ocupan todo el ancho */
-        text-align: center;
-        margin-bottom: calc(var(--base-spacing) * 0.5);
+        margin-bottom: calc(var(--base-spacing) * 0.75);
+    }
+    .action-buttons .button:last-child {
+        margin-bottom: 0;
+    }
+    .habilidad-card {
+        flex-basis: 100%;
+    }
+
+    table {
+        font-size: calc(var(--base-spacing) * 0.85);
+    }
+
+    th, td {
+        padding: calc(var(--base-spacing) * 0.6);
+    }
+}
+
+/* Móviles Grandes (hasta 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: calc(var(--base-spacing) * 0.75); /* Menos padding aún en el body */
+    }
+    .sidebar {
+        padding: var(--base-spacing);
+    }
+    .main-content {
+        padding: var(--base-spacing);
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+    .sidebar h1 {
+        font-size: calc(var(--base-spacing) * 1.25); /* 20px */
+    }
+    .sidebar .job-title {
+        font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+    }
+    .main-content h2 {
+        font-size: calc(var(--base-spacing) * 1.4); /* 22.4px */
+    }
+    .main-content p {
+        font-size: calc(var(--base-spacing) * 0.9); /* 14.4px */
+    }
+
+    .button { 
+        padding: calc(var(--base-spacing) * 0.6) calc(var(--base-spacing) * 1.2);
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group textarea {
+        font-size: calc(var(--base-spacing) * 0.95); /* Ligeramente más grande para inputs en móviles */
+    }
+}
+
+/* Móviles Pequeños (hasta 375px) */
+@media (max-width: 375px) {
+    .sidebar h1 {
+        font-size: calc(var(--base-spacing) * 1.15); /* Un poco más pequeño */
+    }
+    .main-content h2 {
+        font-size: calc(var(--base-spacing) * 1.3); /* Un poco más pequeño */
+    }
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+    .social-icon { /* Iconos sociales un poco más pequeños */
+        width: calc(var(--base-spacing) * 1.3);
+        height: calc(var(--base-spacing) * 1.3);
+    }
+    .habilidad-card h3 {
+        font-size: calc(var(--base-spacing) * 1);
+    }
+     .habilidad-card p {
+        font-size: calc(var(--base-spacing) * 0.85);
+    }
+    table { 
+        font-size: calc(var(--base-spacing) * 0.8);
+    }
+    th, td {
+        padding: calc(var(--base-spacing) * 0.5);
     }
 }

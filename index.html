@@ -1,92 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos básicos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Facundo Villarreal - Desarrollador de Software">
-    <title>Portfolio de Facundo</title>
+    <meta name="description" content="Facundo Villarreal - Desarrollador de Software y aspirante a Technical Artist">
+    <meta name="author" content="Facundo Villarreal">
+    <title>Portfolio de Facundo Villarreal</title>
 
+    <!-- Enlace a la hoja de estilos CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
     </head>
 <body>
+    <!-- Contenedor principal que envuelve todo el contenido del portfolio -->
     <div class="portfolio-container">
-
+        
+        <!-- Barra lateral (Aside) con información personal y de contacto -->
         <aside class="sidebar">
+            <!-- Imagen de perfil del usuario -->
             <img src="/assets/img/profileImg.jpg" alt="Foto de perfil de Facundo" class="profile-picture">
+            <!-- Nombre principal del usuario -->
             <h1>Facundo Villarreal</h1>
+            <!-- Título actual de Facundo -->
             <p class="job-title">Estudiante de Desarrollo de Software | UE Cinematic Artist</p>
 
-            <a href="mailto:tuemail@example.com" class="button email-button">Envíame un Email</a>
+            <!-- Botón principal de llamada a la acción (Email) -->
+            <a href="mailto:facu.villarreal.94@gmail.com" class="button email-button">Envíame un Email</a>
 
+            <!-- Contenedor para los enlaces a redes sociales -->
             <div class="social-links">
-                <a href="https://www.instagram.com/facu041294/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/facu041294/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de Instagram">
                     <img src="/assets/img/instagram-svgrepo-com.svg" alt="Instagram Logo" class="social-icon">
                 </a>
-                <a href="https://www.artstation.com/facu041294" target="_blank" aria-label="Artstation">
+                <a href="https://www.artstation.com/facu041294" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de Artstation">
                     <img src="/assets/img/artstation-svgrepo-com.svg" alt="Artstation Logo" class="social-icon">
                 </a>
-                <a href="https://linkedin.com/in/facundovillarreal/" target="_blank" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/facundovillarreal/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de LinkedIn">
                     <img src="/assets/img/linkedin-svgrepo-com.svg" alt="Linkedin Logo" class="social-icon">
                 </a>
-                <a href="https://github.com/facu041294" target="_blank" aria-label="Github">
+                <a href="https://github.com/facu041294" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de Github">
                     <img src="/assets/img/github-svgrepo-com.svg" alt="Github Logo" class="social-icon">
                 </a>
             </div>
-        </aside>
+        </aside> <!-- Fin de la barra lateral -->
 
+        <!-- Contenido principal del portfolio -->
         <main class="main-content">
+            <!-- Sección "Sobre Mí" -->
             <article class="about-me">
                 <h2>&lt;/Sobre Mí&gt;</h2>
                 <p>
                     Soy estudiante de la Tecnicatura en Desarrollo de Software, apasionado por la tecnología y el arte digital. Mi gran interés y objetivo profesional es fusionar ambos mundos como Artista Técnico (Technical Artist), especializándome en Unreal Engine.
-                    <br>
-                    <br>
+                </p>
+                <p>
                     Teniendo un background en Arquitectura, tengo las habilidades para poder manejar las proporciones, ritmos, texturas, iluminación y persepciones en la creación de espacios, por lo cual experimento en el campo del Environment 3D.
-                    <br>
-                    <br>
+                </p>
+                <p>
                     Actualmente estoy construyendo mi camino, aprendiendo y experimentando para desarrollar las habilidades necesarias que conectan la programación con la creación visual en el desarrollo de videojuegos y experiencias interactivas.
                 </p>
+                <!-- Botones de acción para la sección "Sobre Mí" -->
+                 <!--
                 <div class="action-buttons">
-                    <a href="#cv-link" class="button">Descargar CV</a>
+                    <a href="#cv-link" class="button" download="CV_Facundo_Villarreal.pdf">Descargar CV</a>
                 </div>
-            </article>
+                -->
+            </article> <!-- Fin de la sección "Sobre Mí" -->
 
-            <section class="knowledge-section">
-                <h2>Conocimientos y Hobbies</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Categoría</th>
-                            <th>Tecnologías / Hobbies</th>
-                            <th>Nivel / Interés</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tecnologías Conocidas</td>
-                            <td>HTML5, CSS3, JavaScript (Básico), Git, C#</td>
-                            <td>Estudiante / En Práctica</td>
-                        </tr>
-                        <tr>
-                            <td>Tecnologías por Aprender</td>
-                            <td>React, Python, C++</td>
-                            <td>Alto Interés</td>
-                        </tr>
-                        <tr>
-                            <td>Idiomas</td>
-                            <td>Español (Nativo), Inglés (Intermedio B2)</td>
-                            <td>Mejorando</td>
-                        </tr>
-                        <tr>
-                            <td>Hobbies</td>
-                            <td>Lectura de ciencia ficción, Desarrollo de pequeños videojuegos en Unreal Engine, Ciclismo, Dibujo</td>
-                            <td>Personal</td>
-                        </tr>
-                        </tbody>
-                </table>
-            </section>
+            <!-- Sección "Habilidades Técnicas" -->
+            <section id="habilidades-tecnicas" class="skills-section">
+                <h2><Habilidades Técnicas></h2>
 
+                <!-- Subsección: Desarrollo Front-End y Diseño UI/UX -->
+                <h3>Desarrollo Front-End y Diseño UI/UX</h3>
+                <div class="habilidades-container">
+                    <div class="habilidad-card">
+                        <img src="/assets/img/html-svgrepo-com.svg" alt="Icono de HTML5">
+                        <h3>HTML5 Semántico</h3>
+                        <p>Estructuración de contenido web accesible y bien organizado.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/css-svgrepo-com.svg" alt="Icono de CSS3">
+                        <h3>CSS3 Moderno</h3>
+                        <p>Diseño de interfaces atractivas y responsivas con Flexbox y Grid.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/js-svgrepo-com.svg" alt="Icono de JavaScript">
+                        <h3>JavaScript</h3>
+                        <p>Nivel básico académico, enfocado en manipulación del DOM e interactividad.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/react-svgrepo-com.svg" alt="Icono de React">
+                        <h3>React</h3>
+                        <p>Nivel básico académico, introducción a componentes y estado.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/figma-svgrepo-com.svg" alt="Icono de Figma">
+                        <h3>Figma</h3>
+                        <p>Actualmente cursando en Udemy, orientado a diseño UX/UI y prototipado.</p>
+                    </div>
+                    <!-- Considera añadir Git/GitHub aquí si es tu enfoque principal para Front-End -->
+                    <div class="habilidad-card">
+                        <img src="/assets/img/github-svgrepo-com.svg" alt="Icono de GitHub"> <!-- Suponiendo que tienes un icono de Git o GitHub -->
+                        <h3>Git y GitHub</h3>
+                        <p>Control de versiones y colaboración en proyectos de desarrollo.</p>
+                    </div>
+                </div> <!-- Fin de habilidades-container para Front-End y UI/UX -->
+
+                <!-- Subsección: Desarrollo Back-End, Bases de Datos y Cloud -->
+                <h3>Desarrollo Back-End, Bases de Datos y Cloud</h3>
+                <div class="habilidades-container">
+                    <div class="habilidad-card">
+                        <img src="/assets/img/python-svgrepo-com.svg" alt="Icono de Python">
+                        <h3>Python</h3>
+                        <p>Actualmente cursando en Udemy nivel Básico, con interés en scripting y automatización.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/c-sharp-svgrepo-com.svg" alt="Icono de C#">
+                        <h3>C#</h3>
+                        <p>Nivel Básico académico, aplicado en desarrollo de aplicaciones.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/dotnet-svgrepo-com.svg" alt="Icono de .NET">
+                        <h3>.NET Framework</h3>
+                        <p>Manejo de WinForms para proyecto académico con C#.</p>
+                    </div>
+                     <div class="habilidad-card">
+                        <img src="/assets/img/kotlin-16-svgrepo-com.svg" alt="Icono de Kotlin">
+                        <h3>Kotlin</h3>
+                        <p>Desarrollo de proyecto académico para aplicaciones móviles.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/mysql-svgrepo-com.svg" alt="Icono de MySQL">
+                        <h3>MySQL</h3>
+                        <p>Manejo de consultas y gestión de bases de datos con MySQL Workbench.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/aws-svgrepo-com.svg" alt="Icono de AWS">
+                        <h3>AWS Cloud Practitioner</h3>
+                        <p>Cursando Cloud Foundations (70% completado), fundamentos de la nube de AWS.</p>
+                    </div>
+                </div> <!-- Fin de habilidades-container para Back-End, DB y Cloud -->
+
+                <!-- Subsección: Software de Creación Digital y Technical Art -->
+                <h3>Software de Creación Digital y Technical Art</h3>
+                <div class="habilidades-container">
+                    <div class="habilidad-card">
+                        <img src="/assets/img/unreal-engine-svgrepo-com.svg" alt="Icono de Unreal Engine">
+                        <h3>Unreal Engine 4 & 5</h3>
+                        <p>Manejo en Gaming y Cinemáticas, orientado al Environment Design y Blueprints.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/blender-svgrepo-com.svg" alt="Icono de Blender">
+                        <h3>Blender</h3>
+                        <p>Nociones básicas para modelado, UVs y manipulación de assets 3D.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/houdini-svgrepo-com.svg" alt="Icono de Houdini">
+                        <h3>Houdini</h3>
+                        <p>Nociones básicas en VFX, composición de escena y simulaciones (destrucción).</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/adobe-photoshop-svgrepo-com.svg" alt="Icono de Adobe Photoshop">
+                        <h3>Adobe Photoshop</h3>
+                        <p>Manejo orientado en la edición, composición y restauración fotográfica; texturizado.</p>
+                    </div>
+                    <div class="habilidad-card">
+                        <img src="/assets/img/adobe-illustrator-svgrepo-com.svg" alt="Icono de Adobe Illustrator">
+                        <h3>Adobe Illustrator</h3>
+                        <p>Manejo vectorial especializado en representación lineal y diseño de iconos/logos.</p>
+                    </div>
+                </div> <!-- Fin de habilidades-container para Creación Digital -->
+            </section> <!-- Fin de la sección "Habilidades Técnicas" -->
+
+            <!-- Subsección para Idiomas e Intereses Adicionales -->
+            <section id="adicional" class="additional-info-section">
+                <h2>Información Adicional</h2>
+                <p><strong>Idiomas:</strong> Español (Nativo), Inglés (Nivel Intermedio B2 - Certificado EF SET nivel C2 lectura y nivel B1 oralidad).</p>
+                <p><strong>Intereses Relevantes:</strong> Mi formación previa como estudiante de Arquitectura me ha proporcionado una sólida comprensión de la composición espacial, proporciones, teoría del color y estética visual. Estas habilidades son un activo valioso que aplico directamente en mis exploraciones de Environment 3D y en mi objetivo de desarrollo como Technical Artist. En mi tiempo libre, disfruto de la lectura de ciencia ficción, el diseño de niveles y la creación de pequeños prototipos de juegos en Unreal Engine, lo que alimenta mi pasión por la narrativa interactiva y la resolución creativa de problemas.</p>
+            </section> <!-- Fin de la sección "Adicional" -->
+
+            <!--
             <section class="contact-section">
                 <h2>Contacto</h2>
                 <form action="#" method="POST">
@@ -113,12 +207,46 @@
                     <button type="submit" class="button submit-button">Enviar Mensaje</button>
                 </form>
             </section>
-        </main>
-    </div>
+        -->
+            <!-- Sección de Contacto con Formulario -->
+            <section class="contact-section">
+                <h2>Contacto</h2>
+                <!-- El atributo 'action' debería apuntar a un script de backend o servicio como Formspree. Por ahora, '#' es un placeholder. -->
+                <!-- El método 'POST' es comúnmente usado para enviar datos de formularios. -->
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST"> <!-- Reemplaza YOUR_FORMSPREE_ID con tu ID de Formspree -->
+                    <!-- Grupo de campo para el Nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre*:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                    </div>
+                    <!-- Grupo de campo para el Email -->
+                    <div class="form-group">
+                        <label for="email">Email*:</label>
+                        <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+                    </div>
+                    <!-- Grupo de campo para el Teléfono (Opcional) -->
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (Opcional):</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 XXXX XXXX">
+                    </div>
+                    <!-- Grupo de campo para el Mensaje -->
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje*:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <!-- Botón para enviar el formulario -->
+                    <button type="submit" class="button submit-button">Enviar Mensaje</button>
+                </form>
+            </section> <!-- Fin de la sección de Contacto -->
 
+        </main> <!-- Fin del contenido principal -->
+    </div> <!-- Fin del contenedor principal del portfolio -->
+
+    <!-- Pie de página del sitio web -->
     <footer>
         <p>&copy; <span id="current-year">2025</span> Facundo Villarreal. Todos los derechos reservados.</p>
-        </footer>
+    </footer>
+
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
